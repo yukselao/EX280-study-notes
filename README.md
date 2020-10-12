@@ -92,6 +92,29 @@ oc port-forward my-pod-name local-port:remote-port
 oc get pod --loglevel 10
 ```
 
+## authentication token ogrenme
+
+```bash
+oc whami -t
+```
+
+# get projects
+
+
+# switch to project
+
+
+# get status of project
+
+# get events
+
+# get deployment
+
+# modify deployment 
+oc edit depoyment/bla
+
+
+
 
 
 
