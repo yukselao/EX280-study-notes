@@ -54,3 +54,44 @@ oc adm node-logs -u kubelet master01
 oc adm node-logs master01
 ```
 
+
+## node'a uzaktan erisim saglama
+
+```bash
+oc debug node/master01
+
+```
+
+## deployment'a uzaktan erisim saglama
+
+```bash
+oc debug deployment/my-deployment-name --as-root
+```
+
+## pod'a uzaktan erisim saglama
+
+```bash
+oc rsh my-pod-name
+```
+
+## dosya kopyalama
+
+```bash
+oc cp localfile my-pod-name:/remotefile
+```
+
+## tcp tunnel olusturma
+
+```bash
+oc port-forward my-pod-name local-port:remote-port
+```
+
+## increase log level
+
+```bash
+oc get pod --loglevel 10
+```
+
+
+
+
