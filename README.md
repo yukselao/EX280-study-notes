@@ -37,3 +37,20 @@ oc get user
 ```bash
 oc adm policy remove-cluster-role-from-group self-provisioner system:authenticated:oauth
 ```
+
+
+## ClusterOperators Listeleme
+
+```bash
+oc get co
+oc get clusteroperators
+```
+
+## Log görüntüleme
+
+```bash
+oc adm node-logs -u crio master01
+oc adm node-logs -u kubelet master01
+oc adm node-logs master01
+```
+
