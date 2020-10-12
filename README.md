@@ -2,5 +2,7 @@
 
 ## Kullanıcı yarat
 
+```bash
 oc create user aliokan
 oc create user --full-name="Ali Okan Yuksel"
+```
