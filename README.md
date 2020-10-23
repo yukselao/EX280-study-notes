@@ -126,6 +126,11 @@ oc set env dc/mydb --from cm/db-config --prefix=MYSQL
 oc set env dc/mydb --from cm/db-auth --prefix=MYSQL
 ```
 
+# image search ve listeleme nasıl yapılır?
+```bash
+oc new-app -L
+oc new-app --search mysql
+```
 
 
 
