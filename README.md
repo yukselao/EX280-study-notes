@@ -113,6 +113,19 @@ oc whami -t
 # modify deployment 
 oc edit depoyment/bla
 
+# yeni bir uygulama yarat
+
+oc new-app --name=mydb --image-stream=mysql:5.7 -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=verysecret -e MYSQL_DATABASE=mydb
+
+# uygulamaya ait env variable'ları config den okunacak hale getirmek amacıyla bir configmap ve secret yarat
+
+oc create configmap db-config --from-literal user=dbuser --from-literal=database=mydb
+oc create secret generic db-auth --from-literal=password=verysecret
+oc set env dc/mydb --list  # mydb isimi uygulama ayağa kaldırırken verdiğimiz isimlendirme, mevcut environment variable'ları listeler
+oc set env dc/mydb --from cm/db-config --prefix=MYSQL
+oc set env dc/mydb --from cm/db-auth --prefix=MYSQL
+
+
 
 
 
