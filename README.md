@@ -132,6 +132,11 @@ oc new-app -L
 oc new-app --search mysql
 ```
 
+# openshift console url bilgisi nasıl öğrenilir?
+```bash
+oc whoami --show-console
+```
+
 
 
 
