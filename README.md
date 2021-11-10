@@ -13,6 +13,35 @@ oc get clusterversion
 ```   
 
 
+## Identity Provider definition
+```
+Configuring the OAuth Custom Resource
+
+To use the HTPasswd identity provider, the OAuth custom resource must be edited to add an
+
+entry to the .spec.identityProviders array:
+apiVersion: config.openshift.io/v1
+kind: OAuth
+
+metadata:
+
+  name: cluster
+
+spec:
+
+  identityProviders:
+
+  - name: my_htpasswd_provider 
+    mappingMethod: claim 
+    type: HTPasswd
+    htpasswd:
+
+      fileData:
+
+        name: htpasswd-secret
+```
+
+
 ## Node'ları listele 
 
 ```bash
